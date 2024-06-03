@@ -12,20 +12,12 @@ una elección, para lo cual les proponemos varios links (no son los únicos public
 #include <iostream>
 #include <string>
 
-#define CANDIDATOS 10;
-
 using namespace std;
 
+#include <listas.h>
+#include <votos.h>
 
-
-struct Partido {
-	int numero_lista;
-	string nombre_lista;
-
-};
-
-
-void main() {
+int main() {
 	/*
 	1.
 Para obtener una banca, al menos se deben obtener el 3% de los votos:
@@ -36,7 +28,21 @@ en el ejemplo que en 4 listas NO ALCANZARON el 3%, por lo tanto las bancas se va
 listas restantes.
 */
 
+	Lista l;
+	l.nombre_lista = "Loques de los asados!";
+	l.numero_lista = 19;
+	l.personas_candidatas[Titularidad::Titular] = "Camilo";
+	l.personas_candidatas[Titularidad::Titular+1] = "Zapata";
+	l.personas_candidatas[Titularidad::Suplente] = "Julieta";
+	l.personas_candidatas[Titularidad::Suplente+1] = "Carlos";
 
+	l.Mostrar();
+
+	Lista l1 = Nulo();
+	l1.Mostrar();
+	Lista l2 = Blanco();
+	l2.Mostrar();
 
 	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	return 0;
 }

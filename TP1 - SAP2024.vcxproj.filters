@@ -24,4 +24,12 @@
       <Filter>Archivos de recursos</Filter>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="listas.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="votos.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
