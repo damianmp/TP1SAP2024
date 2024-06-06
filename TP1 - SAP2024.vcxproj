@@ -141,6 +141,7 @@
     <None Include="datos_partidos.csv" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="archivos.h" />
     <ClInclude Include="listas.h" />
     <ClInclude Include="votos.h" />
   </ItemGroup>

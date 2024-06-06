@@ -16,33 +16,43 @@ enum Titularidad {
 };
 
 struct Lista {
+public:
 	int numero_lista;
 	string nombre_lista;
-
-	candidatos personas_candidatas;
+private:
+	candidatos *personas_candidatas = 0;
+public:
+	Lista(){}
+	Lista(int m_numero_lista, string m_nombre_lista, candidatos *m_personas_candidatas) :
+		numero_lista(m_numero_lista), nombre_lista(m_nombre_lista){
+		personas_candidatas = m_personas_candidatas;
+	}
 
 	void Mostrar() {
-
 		int sum = 0;
-
 		cout << "============================" << endl
 			<< "N°: " << numero_lista << endl
 			<< "Partido: " << nombre_lista << endl
 			<< "Candidates: "<< endl;
-
-		for (int i = 0; i < CANDIDATOS_TOTALES; i++) {
-			if (personas_candidatas[i].length() > 1) {
-				switch (i) {
-				case Titular:  cout << "\t= Titulares: =" << endl ;
-					break;
-				case Suplente:  cout << "\t= Suplentes: =" << endl ;
-					break;
+		if ((*personas_candidatas) != NULL)
+		{
+			for (int i = 0; i < CANDIDATOS_TOTALES; i++) {
+				if ((*personas_candidatas)[i].length() > 0) {
+					switch (i) {
+					case Titular:  cout << "\t= Titulares: =" << endl;
+						break;
+					case Suplente:  cout << "\t= Suplentes: =" << endl;
+						break;
+					}
+					cout << "\t*" << (*personas_candidatas)[i] << endl;
 				}
-				cout << "\t*" << personas_candidatas[i] << endl;
+				else {
+					sum++;
+				}
 			}
-			else {
-				sum++;
-			}
+		}
+		else {
+			sum = CANDIDATOS_TOTALES;
 		}
 
 		if (sum == 10) {
@@ -57,8 +67,6 @@ struct Nulo : Lista {
 	Nulo() {
 		numero_lista = VNulo;
 		nombre_lista = "NULO";
-
-		personas_candidatas[0] = { "\0" };
 	}
 };
 
@@ -66,7 +74,5 @@ struct Blanco : Lista {
 	Blanco() {
 		numero_lista = VBlanco;
 		nombre_lista = "BLANCO";
-
-		personas_candidatas[0] = { "\0" };
 	}
 };
