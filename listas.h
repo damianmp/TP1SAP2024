@@ -30,7 +30,7 @@ public:
 		}
 	}
 
-	void Mostrar() {
+	void Mostrar() const{
 		int sum = 0;
 		cout << "============================" << endl
 			<< "N°: " << numero_lista << endl

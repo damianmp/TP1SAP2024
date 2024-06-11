@@ -1,7 +1,7 @@
 #pragma once
 void nextPalabra(string& linea, int& pos, string& palabra);
 
-void ArchivoALista(string dir, Lista lista[], int size) {
+void ArchivoALista(string dir, Lista *lista, int size) {
 
 	ifstream archivo(dir);
 
@@ -62,6 +62,7 @@ void ArchivoALista(string dir, Lista lista[], int size) {
 		if (i == size) {
 			break;
 		}
+
 		Lista l(numero_lista, nombre_lista, can);
 		lista[i] = l;
 		i++;

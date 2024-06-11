@@ -11,14 +11,12 @@ using namespace std;
 int main() {
 	setlocale(LC_CTYPE, "Spanish");
 
-	Lista l[6];
+	Lista l[2];
 
 	ArchivoALista("datos_partidos.csv", l, 2);
 
 	l[0].Mostrar();
-
-	//testeo roto
-	l[4].Mostrar();
+	l[1].Mostrar();
 
 	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 	return 0;
