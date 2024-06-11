@@ -1,4 +1,4 @@
-Marcos generales:
+Apuntes:
 =================
 
 1) Al usar un puntero como referencia se debe:
