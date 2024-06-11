@@ -59,7 +59,9 @@ void ArchivoALista(string dir, Lista lista[], int size) {
 			}
 			linea = linea.substr(pos+1);
 		}
-
+		if (i == size) {
+			break;
+		}
 		Lista l(numero_lista, nombre_lista, can);
 		lista[i] = l;
 		i++;
