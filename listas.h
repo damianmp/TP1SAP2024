@@ -20,12 +20,14 @@ public:
 	int numero_lista;
 	string nombre_lista;
 private:
-	candidatos *personas_candidatas = 0;
+	candidatos personas_candidatas;
 public:
 	Lista(){}
-	Lista(int m_numero_lista, string m_nombre_lista, candidatos *m_personas_candidatas) :
+	Lista(int m_numero_lista, string m_nombre_lista, candidatos m_personas_candidatas) :
 		numero_lista(m_numero_lista), nombre_lista(m_nombre_lista){
-		personas_candidatas = m_personas_candidatas;
+		for (int i = 0; i < CANDIDATOS_TOTALES; i++) {
+			personas_candidatas[i] = m_personas_candidatas[i];
+		}
 	}
 
 	void Mostrar() {
@@ -34,17 +36,17 @@ public:
 			<< "N°: " << numero_lista << endl
 			<< "Partido: " << nombre_lista << endl
 			<< "Candidates: "<< endl;
-		if ((*personas_candidatas) != NULL)
+		if (personas_candidatas != NULL)
 		{
 			for (int i = 0; i < CANDIDATOS_TOTALES; i++) {
-				if ((*personas_candidatas)[i].length() > 0) {
+				if (personas_candidatas[i].length() > 0) {
 					switch (i) {
 					case Titular:  cout << "\t= Titulares: =" << endl;
 						break;
 					case Suplente:  cout << "\t= Suplentes: =" << endl;
 						break;
 					}
-					cout << "\t*" << (*personas_candidatas)[i] << endl;
+					cout << "\t*" << personas_candidatas[i] << endl;
 				}
 				else {
 					sum++;

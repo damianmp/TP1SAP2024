@@ -8,6 +8,6 @@ enum Genero {
 
 struct Votante {
 	Lista voto;
-	int genero;
+	Genero genero;
 	int edad;
 };
