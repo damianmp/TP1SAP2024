@@ -49,3 +49,20 @@ test* t4 = t3;
 cout << t4[0].a << " -> " << t4[2].a << endl;
 cout << (*t).b << " " << t4[0].b << " " << t4[2].b << endl;
 ```
+4) Ejemplo de concatenación y muestra de datos en una matriz
+```
+char matrix[30][10][5];
+
+for (int i = 0; i <= 10; i++) {
+	for (int j = 0; j <= 5; j++) {
+		sprintf(matrix[i][j], "| %3i |", ((i * 10)+j));
+	}
+}
+
+for (int i = 0; i <= 10; i++) {
+	for (int j = 0; j <= 5; j++) {
+		cout << matrix[i][j];
+	}
+	cout << endl;
+}
+```
