@@ -25,3 +25,27 @@ Votante *votos2 = new Votante[10];
 */
 memcpy(votos2, votos , 10*sizeof(Votante));
 ```
+3) Manejo práctico de la memoria con punteros y referencias
+```
+struct test {
+	int a;
+	char b[12]; // b* == b[]
+};
+
+test t2;
+t2.a = 15;
+memcpy(t2.b, "Hola!", sizeof(char) * 12);
+
+test* t = &t2;
+cout << (*t).a << " -> " << (*t).b << endl;
+
+test t3[3];
+t3[0].a = 13;
+memcpy(t3[0].b, "Mundo", sizeof(char) * 12);
+t3[2].a = 123;
+memcpy(t3[2].b, "Eto e c++", sizeof(char) * 12);
+
+test* t4 = t3;
+cout << t4[0].a << " -> " << t4[2].a << endl;
+cout << (*t).b << " " << t4[0].b << " " << t4[2].b << endl;
+```
