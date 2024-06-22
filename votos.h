@@ -11,3 +11,4 @@ struct Votante {
 	Genero genero;
 	int edad;
 };
+

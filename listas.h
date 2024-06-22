@@ -1,6 +1,6 @@
 #pragma once
 
-#define LISTAS 7
+#define MAX_LISTAS 7
 #define CANDIDATOS_TOTALES 10
 
 typedef string candidatos[CANDIDATOS_TOTALES];
@@ -21,6 +21,7 @@ public:
 	string nombre_lista;
 private:
 	candidatos personas_candidatas;
+	int cantidad_votos = 0;
 public:
 	Lista(){}
 	Lista(int m_numero_lista, string m_nombre_lista, candidatos m_personas_candidatas) :
@@ -29,8 +30,15 @@ public:
 			personas_candidatas[i] = m_personas_candidatas[i];
 		}
 	}
+	int MostrarCantidadVotos() {
+		return cantidad_votos;
+	}
 
-	void Mostrar() const{
+	void Votar() {
+		cantidad_votos++;
+	}
+
+	void Mostrar(){
 		int sum = 0;
 		cout << "============================" << endl
 			<< "N°: " << numero_lista << endl
@@ -57,11 +65,23 @@ public:
 			sum = CANDIDATOS_TOTALES;
 		}
 
-		if (sum == 10) {
+		if (sum == CANDIDATOS_TOTALES) {
 			cout << "\t(Sin candidatos)" << endl;
 		}
 
 		cout << "============================" << endl;
+	}
+
+	candidatos* getCandidatos(){
+		return &personas_candidatas;
+	}
+
+	string getNombre() {
+		return this->nombre_lista;
+	}
+
+	int getNumeroLista() {
+		return this->numero_lista;
 	}
 };
 

@@ -18,12 +18,12 @@ void ArchivoALista(string dir, Lista *lista, int size) {
 		string nombre_lista = "";
 		candidatos can;
 
-		int titulares = 0;
-		int suplentes = 0;
-
 		string mark;
 
 		while(pos > -1){
+
+			int titulares = 0;
+			int suplentes = 0;
 
 			pos = linea.find(",");
 			palabra = linea.substr(0, pos);
@@ -39,12 +39,11 @@ void ArchivoALista(string dir, Lista *lista, int size) {
 				}
 				if (mark == "T") {
 					do {
-						nextPalabra(linea, pos, palabra);
-
 						if (palabra != "S") {
 							can[Titularidad::Titular + titulares] = palabra;
 							titulares++;
 						}
+						nextPalabra(linea, pos, palabra);
 					} while (palabra != "S");
 					mark = "S";
 				}
@@ -59,12 +58,10 @@ void ArchivoALista(string dir, Lista *lista, int size) {
 			}
 			linea = linea.substr(pos+1);
 		}
-		if (i == size) {
-			break;
+		if (i < size) {
+			Lista l(numero_lista, nombre_lista, can);
+			lista[i] = l;
 		}
-
-		Lista l(numero_lista, nombre_lista, can);
-		lista[i] = l;
 		i++;
 	}
 
