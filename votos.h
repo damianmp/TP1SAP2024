@@ -7,7 +7,6 @@ enum Genero {
 };
 
 struct Votante {
-	Lista voto;
 	Genero genero;
 	int edad;
 };
