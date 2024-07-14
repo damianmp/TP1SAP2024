@@ -34,6 +34,7 @@ int main() {
 	OrdenarMayorMenor(l);
 	MostrarVotos(l, total);
 
+
 	return 0;
 }
 
