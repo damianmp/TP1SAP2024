@@ -4,6 +4,7 @@
 #define CANDIDATOS_TOTALES 10
 
 typedef string candidatos[CANDIDATOS_TOTALES];
+typedef int edades[4];
 
 enum TipoVoto {
 	VNulo = -1,
@@ -15,11 +16,20 @@ enum Titularidad {
 	Suplente = 5
 };
 
+enum RangoEdad{
+	Dieciocho = 0,
+	Treinta,
+	Cincuenta,
+	Mayor50,
+	MAX_RANGOEDAD = 4
+};
+
 struct Lista {
 public:
 	int numero_lista;
 	string nombre_lista;
-private:
+	edades categoria = {0,0,0,0};
+public: // MODIF ED
 	candidatos personas_candidatas;
 	int cantidad_votos = 0;
 	int bancas = 0;
