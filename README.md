@@ -66,3 +66,22 @@ for (int i = 0; i <= 10; i++) {
 	cout << endl;
 }
 ```
+
+5)Teoría de los punteros
+Un puntero es dinámicamente asignado, de tal manera se puede llenar indefinidamente el array
+```
+void procesarTrabajos(EQUIPO_TRABAJOS_t*& equiposTrabajos) {
+	equiposTrabajos = new EQUIPO_TRABAJOS_t;
+
+	strcpy_s(equiposTrabajos->e.DESCRIPCION,"Q_Q-->0");
+	strcpy_s((equiposTrabajos+1)->e.DESCRIPCION, "Q_Q-->1");
+	strcpy_s((equiposTrabajos+2)->e.DESCRIPCION, "Q_Q-->2");
+}
+
+void mostrarEquipos(EQUIPO_TRABAJOS_t* equiposTrabajos) {
+	for (int i = 0; i <= 2; i++)
+	{
+		cout << (equiposTrabajos+i)->e.DESCRIPCION << endl;
+	}
+}
+```
