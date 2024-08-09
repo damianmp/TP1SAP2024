@@ -67,8 +67,7 @@ for (int i = 0; i <= 10; i++) {
 }
 ```
 
-5) Teoría de los punteros
-Un puntero es dinámicamente asignado, de tal manera se puede llenar indefinidamente el array
+5) Un puntero es dinámicamente asignado
 ```
 struct EQUIPO_TRABAJOS_t {
 	EQUIPOS_t e;
