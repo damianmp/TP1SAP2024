@@ -80,7 +80,7 @@ int main() {
 }
 
 void procesarTrabajos(EQUIPO_TRABAJOS_t*& equiposTrabajos) {
-	equiposTrabajos = new EQUIPO_TRABAJOS_t;
+	equiposTrabajos = new EQUIPO_TRABAJOS_t[3];
 
 	strcpy_s(equiposTrabajos->e.DESCRIPCION,"Q_Q-->0");
 	strcpy_s((equiposTrabajos+1)->e.DESCRIPCION, "Q_Q-->1");
