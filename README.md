@@ -94,3 +94,31 @@ void mostrarEquipos(EQUIPO_TRABAJOS_t* equiposTrabajos) {
 	}
 }
 ```
+
+6) Nodos
+```
+struct nodo {
+	int dato;
+	nodo *link;
+};
+
+int main() {
+	nodo* a = new nodo;
+	a->dato = 5;
+	a->link = new nodo;
+
+	a->link->dato = 6;
+	a->link->link = new nodo;
+
+	a->link->link->dato = 7;
+	a->link->link->link = nullptr;
+
+	nodo* actual = a;
+	while (actual != nullptr) {
+		cout << actual->dato << " - ";
+		actual = actual->link;
+	}
+
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+}
+```
